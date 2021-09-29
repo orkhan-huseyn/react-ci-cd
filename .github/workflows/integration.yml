@@ -2,7 +2,7 @@ name: 'Continuous integration for React'
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   lint_and_test:

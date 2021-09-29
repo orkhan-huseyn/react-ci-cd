@@ -16,3 +16,9 @@ jobs:
 
       - name: Run linter
         run: yarn lint
+
+      - name: Run tets
+        run: yarn test
+
+      - name: Run build script
+        run: yarn build

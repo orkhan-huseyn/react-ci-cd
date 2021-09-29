@@ -1,0 +1,24 @@
+name: 'Deploy to GH pages'
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 'Install and build'
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: 'Deploy'
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: build
+          token: ${{ secrets.ACCESS_TOKEN }}

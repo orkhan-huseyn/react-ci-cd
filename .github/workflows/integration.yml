@@ -1,4 +1,4 @@
-name: 'Continuous integration for React'
+name: 'Check and tests'
 
 on:
   pull_request:
